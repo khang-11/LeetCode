@@ -12,12 +12,11 @@ class Solution:
             
         for i in range(26):
             matches += 1 if s1_occ[i] == s2_occ[i] else 0
-                  
-        if matches == 26:
-            return True
             
         for i in range(len(s1), len(s2)):    
-       
+            if matches == 26:
+                return True
+
             r_index = ord(s2[i]) - ord('a')
             l_index = ord(s2[i - len(s1)]) - ord('a')
             
@@ -33,7 +32,4 @@ class Solution:
             elif s2_occ[l_index] + 1 == s1_occ[l_index]:
                 matches -= 1
                 
-            if matches == 26:
-                return True
-
-        return False
+        return matches == 26
