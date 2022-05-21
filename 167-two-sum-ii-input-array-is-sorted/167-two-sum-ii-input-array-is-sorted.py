@@ -3,8 +3,7 @@ class Solution:
         l, r = 0, len(numbers) - 1
         sm = numbers[l] + numbers[r]
         
-        while sm != target:
-            
+        while sm != target:           
             
             if sm < target:
                 l += 1
