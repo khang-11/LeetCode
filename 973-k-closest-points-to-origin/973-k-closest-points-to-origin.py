@@ -5,8 +5,7 @@ class Solution:
         h = []
         
         for point in points:
-            distance = point[0]**2 + point[1]**2
-            heapq.heappush(h, (-distance, point))
+            heapq.heappush(h, (-(point[0]**2 + point[1]**2), point))
             if len(h) > k:
                 heapq.heappop(h)
             
