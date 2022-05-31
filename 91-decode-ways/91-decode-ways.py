@@ -1,10 +1,12 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
+        # edge cases
         if s[0] == "0":
             return 0
         if len(s) == 1:
             return 1
         
+        # base cases
         dp = [None] * len(s)
         dp[0] = 1
         if int(s[1]) == 0:
@@ -18,7 +20,8 @@ class Solution:
             dp[1] = 2
         else:
             dp[1] = 1
-        
+            
+        # dp
         for i in range(2, len(s)):
             if int(s[i]) == 0:
                 if int(s[i-1]) in range(1, 3):
